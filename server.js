@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     res.send('<h1>Hello World...</h1>');
 })
 
-app.use('/auth', authRouter);
+app.use('/api', authRouter);
 app.use(notFound)
 app.use(errorHandler)
 

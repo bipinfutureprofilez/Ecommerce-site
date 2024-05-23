@@ -12,6 +12,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             <Route path='/register' element={<Register />} />
           </Routes>
         </div>
+
+        <Toaster />
     </>
   );
 }

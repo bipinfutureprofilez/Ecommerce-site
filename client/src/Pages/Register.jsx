@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import useGetRegister from '../hooks/useGetRegister';
 
 export default function Register() {
+
+    const { signUpHook, loading } = useGetRegister();
 
     const [inputValue, setInputValues] = useState({
         name: '',
@@ -17,7 +20,7 @@ export default function Register() {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(inputValue);
+        signUpHook(inputValue);
     }
 
     return (
@@ -45,11 +48,11 @@ export default function Register() {
                                 <input type="password" name='confirmPassword' className="form-control" id="confirmPassword" placeholder="Confirm Password" value={inputValue.confirmPassword} onChange={handleOnChange} />
                                 <label htmlFor="confirmPassword">Confirm Password</label>
                             </div>
-                            <div className="checkbox mb-3">
+                            {/* <div className="checkbox mb-3">
                                 <label>
                                     <input type="checkbox" value="remember-me" /> Remember me
                                 </label>
-                            </div>
+                            </div> */}
                             <button className="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
                         </form>
                     </div>

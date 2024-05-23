@@ -78,7 +78,7 @@ export default function Home() {
                             Array.from(Array(8), (e,i) => {
                                 return(
                                     <>
-                                        <ProductItem />
+                                        <ProductItem setKey={i} />
                                     </>
                                 );
                             })
